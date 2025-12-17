@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jokić Trivia App</title>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #0b1b2b, #f2f2f2);
+      margin: 0;
+      padding: 0;
+    }
+
+    .appBox {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 24px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 10px;
+      background: #0b3a6a;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 12px;
+    }
+
+    button:hover {
+      background: #092f57;
+    }
+
+    .nav a {
+      display: inline-block;
+      margin: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #0b3a6a;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="appBox">
+    <h1>Nikola Jokić Trivia Generator</h1>
+    <p>Click the button to test your Jokić knowledge.</p>
+
+    <h2 id="question">Ready?</h2>
+
+    <button onclick="generateTrivia()">Generate Trivia</button>
+
+    <div class="nav">
+      <a href="scratch.html">Back to Fan Page</a>
+    </div>
+  </div>
+
+  <script>
+    const trivia = [
+      "Nikola Jokić was drafted 41st overall in the 2014 NBA Draft.",
+      "Jokić is known as the first center to lead the NBA in assists.",
+      "He won multiple MVP awards without relying on athletic dominance.",
+      "Jokić is nicknamed 'The Joker'.",
+      "He is famous for his no-look passes and court vision."
+    ];
+
+    function generateTrivia() {
+      const randomIndex = Math.floor(Math.random() * trivia.length);
+      document.getElementById("question").innerText = trivia[randomIndex];
+    }
+  </script>
+
+</body>
+</html>
